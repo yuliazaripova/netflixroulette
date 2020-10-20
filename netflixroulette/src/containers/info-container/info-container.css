@@ -1,0 +1,17 @@
+.info-container {
+  height: 35px;
+  padding-top: 10px;
+  padding-right: 8%;
+  padding-left: 10vw;
+  background-color: rgb(225, 217, 217);
+  display: flex;
+  justify-content: space-between;
+  color: rgb(60, 60, 60);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+@media (max-width:789px) {
+  .info-container {
+    font-size: 1rem;
+  }
+}
