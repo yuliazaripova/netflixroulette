@@ -1,10 +1,13 @@
 import * as React from 'react';
-import enterSvg from '../../../assets/enter.svg'
+import RadioToolbar from '../radio-toolbar';
 
 import './search-form.css';
 
-export default class SearchForm extends React.Component<{}, {}> {
-  render() {
+interface ISearchFormProps {
+
+}
+
+const SearchForm:React.FC<ISearchFormProps> = () => {
     return(
       <div className="search-form_container">
         <form className="search-form">
@@ -12,21 +15,22 @@ export default class SearchForm extends React.Component<{}, {}> {
             Find your movie
           </label>
           <div className="search-form_input-wrapper">
-          <input 
-            id="search-form_input" 
-            type="text"
-            placeholder="Enter the movie"/>
-        
+            <input 
+              id="search-form_input" 
+              type="text"
+              placeholder="Enter the movie"/>
             </div>
             <div className="search-form_btn-container">
-              <div className="search-form_radio-toolbar">
-                <span className="search-form_radio-label">Search by</span>
-                <input type="radio" id="title" name="radioSearch" value="title" checked/>
-                <label htmlFor="title">title</label>
-
-                <input type="radio" id="genre" name="radioSearch" value="genre"/>
-                <label htmlFor="genre">genre</label>
-              </div>
+              <RadioToolbar name="search-form"
+                            items={[
+                                    {
+                                      id:"title", 
+                                      isChecked:true
+                                    },
+                                    {
+                                      id:"genre"
+                                    }
+                              ]}/>
 
               <input className="search-form_submit-btn" type="submit" value="Search" />
             </div>
@@ -34,5 +38,7 @@ export default class SearchForm extends React.Component<{}, {}> {
         </form>
       </div>
     )
-  }
 }
+
+export default SearchForm;
+

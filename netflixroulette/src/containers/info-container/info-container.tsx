@@ -3,7 +3,7 @@ import * as React from 'react';
 import './info-container.css';
 
 interface IInfoContainerProps {
-  children: React.ReactNode;
+  
 }
 
 const InfoContainer:React.FC<IInfoContainerProps> = (props) => {

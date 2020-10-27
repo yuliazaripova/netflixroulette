@@ -1,3 +1,10 @@
+export interface IData {
+  data: IMovieDetails[],
+  total: number,
+  offset: number,
+  limit: number
+}
+
 export interface IMovieDetails {
   id: number,
   title: string,
@@ -11,19 +18,4 @@ export interface IMovieDetails {
   revenue?: number,
   runtime?: number,
   genres: string[],
-}
-
-export type TMoviesList = IMovieDetails[];
-
-export interface IMovieList {
-  data: TMoviesList
-  onItemClick: (data:IMovieDetails) => void
-}
-
-export interface IMoviesResults {
-  data: TMoviesList,
-  total: number,
-  offset: number,
-  limit: number
-  onClick?: (data: IMovieDetails) => void
 }

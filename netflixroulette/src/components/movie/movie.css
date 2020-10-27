@@ -13,6 +13,7 @@
 @media (max-width:789px) {
   .movie {
     width: 70vw;
+    height: fit-content;
     margin: auto;
     margin-bottom: 20px;
   }

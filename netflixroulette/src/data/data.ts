@@ -1,6 +1,6 @@
-import {IMoviesResults} from '../types'
+import {IData} from '../types'
 
-const result:IMoviesResults = {
+const result:IData = {
   "data": [
     {
       "id": 181808,

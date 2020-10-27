@@ -7,7 +7,9 @@
 
 .movie-details_poster {
   width: 300px;
+  height: 450px;
   margin-right: 80px;
+  background-color: rgb(255, 255, 255);
 }
 
 .movie-details_title {
@@ -41,6 +43,7 @@
 @media(max-width:1020px) {
   .movie-details_poster {
     width: 220px;
+    height: 330px;
     margin-right: 50px;
   }
   .movie-details_title {
@@ -54,6 +57,7 @@
   }
   .movie-details_poster {
     width: 70vw;
+    height: auto;
     margin: auto
   }
   .movie-details_title {
@@ -73,11 +77,11 @@
   .movie-details_title {
     font-size: 2rem;
   }
-  .movie-details_vote {
+  /* .movie-details_vote {
     position: absolute;
     top: 20px;
     right: -20px;
-  }
+  } */
   .movie-details_overview {
     padding: 0;
   }
