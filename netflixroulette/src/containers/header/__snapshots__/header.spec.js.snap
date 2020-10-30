@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render Header component with Btn 1`] = `
+<header>
+  <Logo />
+  <BackBtn />
+</header>
+`;
+
+exports[`Header component should render Header component without Btn 1`] = `
+<header>
+  <Logo />
+</header>
+`;

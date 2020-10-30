@@ -12,7 +12,7 @@ interface IMovieProps {
 }
 
 const Movie:React.FC<IMovieProps> = (props) => {
-  const { title, poster_path, genres, release_date} = props.data;
+  const { title, poster_path, genres, release_date } = props.data;
   const date = getYearFromString(release_date);
 
   const clickHandler = () => {
@@ -32,7 +32,6 @@ const Movie:React.FC<IMovieProps> = (props) => {
 
     </div>
   )
-
 }
 
 export default Movie;

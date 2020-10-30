@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioToolbar component should render RadioToolbar component 1`] = `
+<div
+  className="test_radio-toolbar"
+>
+  <span
+    className="test_radio-label"
+  >
+    Sort by
+  </span>
+  <span
+    key="test1"
+  >
+    <input
+      defaultChecked={true}
+      id="test1"
+      name="radioSort"
+      onChange={[Function]}
+      type="radio"
+      value="test1"
+    />
+    <label
+      htmlFor="test1"
+    >
+      test value
+    </label>
+  </span>
+  <span
+    key="test2"
+  >
+    <input
+      id="test2"
+      name="radioSort"
+      onChange={[Function]}
+      type="radio"
+      value="test2"
+    />
+    <label
+      htmlFor="test2"
+    >
+      test2
+    </label>
+  </span>
+</div>
+`;

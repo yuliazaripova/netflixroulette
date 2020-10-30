@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "outDir": "build",
+    "typeRoots": ["overrides", "node_modules/@types"],
     "sourceMap": true,
     "noImplicitAny": false,
     "module": "commonjs",
@@ -22,6 +23,24 @@
     }
   },
   "awesomeTypescriptLoaderOptions": {
-    "useBabel": true
-  }
+    "useBabel": true,
+    "babelOptions": {
+        "babelrc": false,
+        "presets": [
+            ["@babel/preset-env", { "targets": "last 2 versions, ie 11", "modules": false }]
+        ]
+    },
+    "babelCore": "@babel/core",
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "dist",
+    "__mocks__",
+    "coverage",
+    "*.config.js",
+    "*.babel.js",
+    "**/*.spec.js"
+  ],
+
 }

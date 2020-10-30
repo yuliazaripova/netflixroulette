@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Poster component should render Poster component 1`] = `
+<img
+  alt="The movie titled: Test title"
+  className="testClass"
+  onError={[Function]}
+  src={null}
+/>
+`;

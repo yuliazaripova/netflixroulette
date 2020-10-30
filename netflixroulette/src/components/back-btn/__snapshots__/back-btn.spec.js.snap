@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BackBtn component should render BackBtn component 1`] = `
+<button
+  className="back-btn"
+  type="button"
+>
+  Search
+</button>
+`;

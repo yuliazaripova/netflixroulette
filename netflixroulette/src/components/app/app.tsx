@@ -20,11 +20,11 @@ import result from '../../data/data';
 
 
 import './app.css';
-import ErrorButton from '../../error-btn';
+
 import ErrorBoundary from '../error-boundary';
 
 
-async function http<T>(req:string): Promise<T> {
+export async function http<T>(req:string): Promise<T> {
   const response = await fetch(req);
   return response.json() 
 }
@@ -34,13 +34,9 @@ const useData = () => {
   
   React.useEffect(() => {
     const data = http<IData>('https://reactjs-cdp.herokuapp.com/movies?search=stars').then(data => setResult(data))
-    
   }, [])
   return result;
 }
-
-const scrollUp:() => void = () => window.scrollTo(0, 0);
-
 interface IAppProps {
   
 }
@@ -52,7 +48,7 @@ const App:React.FC<IAppProps> = () => {
   
   const toMoviePage = (data: IMovieDetails):void => {
     setMovie(data);
-    scrollUp();
+    window.scrollTo(0, 0);
   }
   const toMainPage = ():void => {
     setMovie(null);
