@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieView component should render MovieView component 1`] = `
+<div
+  className="movie"
+>
+  <Poster
+    classes="movie_poster"
+    poster_path="test poster"
+    title="test title"
+  />
+  <div
+    className="movie_details"
+  >
+    <p
+      className="movie_title"
+    >
+      test title
+    </p>
+    <p
+      className="movie_date"
+    >
+      2017
+    </p>
+  </div>
+  <p
+    className="movie_genres"
+  >
+    test genre1 & test genre2
+  </p>
+</div>
+`;

@@ -32,15 +32,26 @@
     },
     "babelCore": "@babel/core",
   },
+  "types" : [
+    "node"
+  ],
   "exclude": [
     "node_modules",
     "build",
     "dist",
     "__mocks__",
+    "cypress",
     "coverage",
     "*.config.js",
     "*.babel.js",
-    "**/*.spec.js"
+    "src/**/*.spec.js",
+    "jest",
+    "setupTest.js",
+    "src/**/__mocks__/*.ts",
+    "src/**/__mocks__/*.tsx",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/__snapshots__/*.test.js.snap",
+    "src/__snapshots__/*.test.js.snap",
   ],
-
 }

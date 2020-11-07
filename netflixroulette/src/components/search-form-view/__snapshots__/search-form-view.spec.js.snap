@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchFormView component should render SearchFormView component 1`] = `
+<div
+  className="search-form_container"
+>
+  <form
+    className="search-form"
+  >
+    <label
+      className="search-form_label"
+      htmlFor="search-form_input"
+    >
+      Find your movie
+    </label>
+    <div
+      className="search-form_input-wrapper"
+    >
+      <input
+        id="search-form_input"
+        placeholder="Enter the movie"
+        type="text"
+      />
+    </div>
+    <div
+      className="search-form_btn-container"
+    >
+      <RadioToolbar
+        items={
+          Array [
+            Object {
+              "id": "title",
+              "isChecked": true,
+            },
+            Object {
+              "id": "genres",
+              "value": "genre",
+            },
+          ]
+        }
+        label="search by"
+        name="search-form"
+      />
+      <input
+        className="search-form_submit-btn"
+        type="submit"
+        value="Search"
+      />
+    </div>
+  </form>
+</div>
+`;

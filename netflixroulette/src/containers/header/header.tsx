@@ -1,19 +1,16 @@
 import * as React from 'react';
+import { useSelector } from 'react-redux';
 import Logo from '../../components/logo';
 import BackBtn from '../../components/back-btn';
+import { getPage } from '../../services/navigation/selectors';
 
 import './header.css';
 
-interface IHeader {
-  renderBtn?: boolean,
-  onClick?: () => void
- 
-}
-
-const Header:React.FC<IHeader> = ({renderBtn, onClick}) => {
+const Header:React.FC = () => {
+  const page = useSelector(getPage);
   let btn:React.ReactNode;
-  if (renderBtn) {
-    btn = <BackBtn onClick={onClick}/>
+  if (page === 'movie') {
+    btn = <BackBtn/>
   } 
   return(
     <header>

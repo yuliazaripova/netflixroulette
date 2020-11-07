@@ -1,14 +1,13 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
+import { toMainPage } from '../../services/navigation/actions';
 
 import './back-btn.css';
 
-interface IBackBtn {
-  onClick: () => void
-}
-
-const BackBtn:React.FC<IBackBtn> = ({onClick}) => {
+const BackBtn:React.FC = () => {
+  const dispatch = useDispatch();
   return (
-    <button className="back-btn" type="button" onClick={onClick}>Search</button>
+    <button className="back-btn" type="button" onClick={() => dispatch(toMainPage())}>Search</button>
   )
 }
 

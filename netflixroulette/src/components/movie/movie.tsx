@@ -1,36 +1,30 @@
 import * as React from 'react';
-import Poster from '../poster';
+import { useDispatch } from 'react-redux'
+import MovieView from '../movie-view';
 import { IMovieDetails } from '../../types';
-
-import {getYearFromString} from '../../helpers/helpers';
+import { toMoviePage } from '../../services/navigation/actions';
+import { getYearFromString } from '../../helpers/helpers';
+import { fetchMoviesByGenres } from '../../services/movies/actions';
 
 import './movie.css';
 
 interface IMovieProps {
   data: IMovieDetails,
-  onClick: (data: IMovieDetails) => void
 }
 
-const Movie:React.FC<IMovieProps> = (props) => {
-  const { title, poster_path, genres, release_date } = props.data;
+const Movie:React.FC<IMovieProps> = ({ data }) => {
+  const dispatch = useDispatch();
+  const { title, poster_path, genres, release_date } = data;
   const date = getYearFromString(release_date);
 
-  const clickHandler = () => {
-    props.onClick(props.data)
+  const goToMoviePage = () => {
+    window.scrollTo(0,0);
+    dispatch(toMoviePage(data));
+    dispatch(fetchMoviesByGenres());
   }
 
   return (
-    <div className="movie" onClick={clickHandler}>
-
-      <Poster title={title} poster_path={poster_path} classes="movie_poster"/>
-      <div className="movie_details">
-        <p className="movie_title">{title}</p>
-        <p className="movie_date">{date}</p>
-      </div>
-
-      <p className="movie_genres">{genres.join(' & ')}</p>
-
-    </div>
+    <MovieView title={title} poster_path={poster_path} genres={genres} date={date} goToMoviePage={goToMoviePage} />
   )
 }
 

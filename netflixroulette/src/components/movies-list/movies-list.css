@@ -4,6 +4,10 @@
   flex-wrap: wrap;
   background-color:white;
   padding: 50px;
+  position: absolute;
+  min-height: calc(100% - 55px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width:789px) {
