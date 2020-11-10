@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap');
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  background-color: gray;
+  background-image: url('../../../../../assets/background.jpg');
+  backdrop-filter: brightness(30%);
+  -webkit-backdrop-filter: brightness(30%);
+  position: relative;
+  min-height: 100vh;
+}
+

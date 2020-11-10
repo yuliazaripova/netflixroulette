@@ -1,5 +1,5 @@
 import { store } from '../../redux/store';
-import { IData } from '../../types';
+import { IData } from '../../models/types';
 
 export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
 export const moviesRequested = () => {

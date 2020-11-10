@@ -93,7 +93,7 @@
       "tsx",
       "js"
     ],
-    "testEnvironment": "node"
+    "testEnvironment": "jsdom"
   },
   "babel": {
     "presets": [
