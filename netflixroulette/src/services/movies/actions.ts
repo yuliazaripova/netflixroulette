@@ -1,5 +1,5 @@
 import { store } from '../../redux/store';
-import { IData } from '../../types';
+import { IData } from '../../models/types';
 
 export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
 export const moviesRequested = () => {
@@ -35,6 +35,7 @@ export const moviesError = (error:never) => {
 export const fetchMovies = () => {
   const state = store.getState();
   const { searchValue, searchBy, sortBy } = state.searchReducer;
+ // return async (dispatch) => {
   return (dispatch) => {
       dispatch(moviesRequested());
       fetch(`https://reactjs-cdp.herokuapp.com/movies?sortBy=${sortBy}&sortOrder=desc&search=${searchValue}&searchBy=${searchBy}`)
@@ -52,6 +53,16 @@ export const fetchMoviesByGenres = () => {
       fetch(`https://reactjs-cdp.herokuapp.com/movies?sortOrder=desc&search=${movieGenre}&searchBy=genres`)
           .then((response) => response.json())
           .then((items) => dispatch(moviesByGenreLoaded(items)))
+          .catch((err:never) => dispatch(moviesError(err)));
+  }
+}
+
+export const fetchMoviesBySearch = (search:string) => {
+  return (dispatch) => {
+      dispatch(moviesRequested());
+      fetch(`https://reactjs-cdp.herokuapp.com/movies?sortBy=release_date&sortOrder=desc&search=${search}&searchBy=title`)
+          .then((response) => response.json())
+          .then((items) => dispatch(moviesLoaded(items)))
           .catch((err:never) => dispatch(moviesError(err)));
   }
 }

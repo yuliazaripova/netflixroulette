@@ -10,9 +10,7 @@ describe('Movie reducer', () => {
     expect(moviesReducer(initialStore, {})).toEqual(initialStore)
   });
   it('should handle FETCH_MOVIES_REQUEST', () => {
-    expect(moviesReducer(initialStore, {
-      type: actions.FETCH_MOVIES_REQUEST,
-    })).toEqual({
+    expect(moviesReducer(initialStore, actions.moviesRequested())).toEqual({
       ...initialStore,
       loading: true,
       error: null

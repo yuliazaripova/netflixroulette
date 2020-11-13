@@ -1,4 +1,4 @@
-import { IData, IMovieDetails } from '../types'
+import { IData, IMovieDetails } from '../models/types'
 
 export type IMoviesStore = {
   result?: IData,

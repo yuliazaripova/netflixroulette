@@ -1,8 +1,8 @@
 import { configure, shallow, render, mount, toJson } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+import ReactSixteenAdapter from 'enzyme-adapter-react-16';
 import 'babel-polyfill';
 
-configure({ adapter: new Adapter() });
+configure({ adapter: new ReactSixteenAdapter() });
 
 
 global.shallow = shallow;
