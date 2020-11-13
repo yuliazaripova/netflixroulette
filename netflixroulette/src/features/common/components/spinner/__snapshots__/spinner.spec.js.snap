@@ -8,7 +8,6 @@ exports[`Spinner component should render Spinner component 1`] = `
     className="lds-double-ring"
   >
     <div />
-    <div />
   </div>
 </div>
 `;

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useSelector } from 'react-redux';
 import MovieDetailsView from '../movie-details-view';
 import { IMovieDetails } from '../../../../models/types';
-import { getMovie, getPage } from '../../../../services/navigation/selectors';
+import { getMovie } from '../../../../services/navigation/selectors';
 
 import './movie-details.css';
 

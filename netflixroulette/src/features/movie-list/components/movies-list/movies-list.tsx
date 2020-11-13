@@ -24,11 +24,15 @@ const MoviesList:React.FC = () => {
   }
 
   if (isLoading) {
-    return <Spinner />
+    return (
+      <div className="movie-list">
+        <Spinner />
+      </div>
+    )
   } else if (!qt && !genre) {
     return (
       <div className="movie-list">
-        <h2>No movies found</h2>
+        <h2 className="movie-list_info-title">No movies found</h2>
       </div>
     )
   } else {

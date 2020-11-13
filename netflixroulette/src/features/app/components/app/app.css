@@ -13,7 +13,22 @@ body {
   background-image: url('../../../../../assets/background.jpg');
   backdrop-filter: brightness(30%);
   -webkit-backdrop-filter: brightness(30%);
-  position: relative;
   min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+header {
+  flex-shrink: 0;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 110px);
+}
+.footer {
+  flex-shrink: 0;
 }
 

@@ -1,13 +1,17 @@
 .movie-list {
+  flex: 1 0 auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   background-color:white;
   padding: 50px;
-  position: absolute;
-  min-height: calc(100% - 55px);
   width: 100%;
   box-sizing: border-box;
+}
+
+.movie-list_info-title {
+  padding-left: 10vw;
+  font-size: 26px;
 }
 
 @media (max-width:789px) {
