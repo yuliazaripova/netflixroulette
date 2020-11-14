@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useSelector } from 'react-redux';
-import Logo from '../logo';
-import BackBtn from '../back-btn';
+import Logo from '../../../common/components/logo';
+import BackBtn from '../../../common/components/back-btn';
 import { getPage } from '../../../../services/navigation/selectors';
 
 import './header.css';

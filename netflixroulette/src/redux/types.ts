@@ -2,7 +2,7 @@ import { IData, IMovieDetails } from '../models/types'
 
 export type IMoviesStore = {
   result?: IData,
-  error?: never | null,
+  error?: any | null,
   loading?: boolean,
   movies?: IMovieDetails[],
   moviesByGenre?: IMovieDetails[],

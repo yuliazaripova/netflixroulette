@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 import SearchFormView from '../search-form-view';
 import { setSearchValue, setSearchBy } from '../../../../services/search/actions';
-import { getSearchBy, getSearchValue } from '../../../../services/search/selectors';
+import { getSearchValue } from '../../../../services/search/selectors';
 import { fetchMovies, fetchMoviesBySearch } from '../../../../services/movies/actions';
 import { isSearch } from '../../../../helpers/helpers';
 
@@ -12,10 +12,8 @@ import './search-form.css';
 const SearchForm:React.FC = () => {
   const dispatch = useDispatch();
   const searchValue = useSelector(getSearchValue);
-  const searchBy = useSelector(getSearchBy)
   const history = useHistory();
-  const location = useLocation();
-  
+
   React.useEffect(() => {
     if (isSearch(location.pathname)) {
       const search = location.search.slice(1);
@@ -52,6 +50,7 @@ const SearchForm:React.FC = () => {
     <SearchFormView searchMovies = {searchMovies}
                     updateSearchValue ={updateSearchValue}
                     updateSearchBy = {updateSearchBy}
+                    searchValue = {searchValue}
     />
   )
 }

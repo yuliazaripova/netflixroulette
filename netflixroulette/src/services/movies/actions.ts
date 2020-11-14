@@ -25,7 +25,7 @@ export const moviesByGenreLoaded = (data:IData) => {
 }
 
 export const FETCH_MOVIES_FAILURE = 'FETCH_MOVIES_FAILURE';
-export const moviesError = (error:never) => {
+export const moviesError = (error:any) => {
   return {
     type: FETCH_MOVIES_FAILURE,
     payload: error
@@ -35,13 +35,15 @@ export const moviesError = (error:never) => {
 export const fetchMovies = () => {
   const state = store.getState();
   const { searchValue, searchBy, sortBy } = state.searchReducer;
- // return async (dispatch) => {
-  return (dispatch) => {
+  return async (dispatch) => {
       dispatch(moviesRequested());
-      fetch(`https://reactjs-cdp.herokuapp.com/movies?sortBy=${sortBy}&sortOrder=desc&search=${searchValue}&searchBy=${searchBy}`)
-          .then((response) => response.json())
-          .then((items) => dispatch(moviesLoaded(items)))
-          .catch((err:never) => dispatch(moviesError(err)));
+      try {
+        const response = await fetch(`https://reactjs-cdp.herokuapp.com/movies?sortBy=${sortBy}&sortOrder=desc&search=${searchValue}&searchBy=${searchBy}`)
+        const result = await response.json()
+        dispatch(moviesLoaded(result))
+      } catch(err) {
+        dispatch(moviesError(err))
+      }
   }
 }
 

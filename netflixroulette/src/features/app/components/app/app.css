@@ -28,7 +28,10 @@ main {
   flex-direction: column;
   min-height: calc(100vh - 110px);
 }
-.footer {
+footer {
   flex-shrink: 0;
 }
 
+a {
+  text-decoration: none;
+}
