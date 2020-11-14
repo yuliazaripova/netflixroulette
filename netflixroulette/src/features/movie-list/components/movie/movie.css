@@ -1,15 +1,15 @@
 .movie {
-  /* min-width: 300px;
-  max-width: 350px;
-  flex: 1 0 20%; */
   width: 25vw;
   cursor: pointer;
+  color: black;
 }
+
 @media (max-width:1019px) {
   .movie {
     width: 40vw;
   }
 }
+
 @media (max-width:789px) {
   .movie {
     width: 70vw;

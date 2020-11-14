@@ -5,6 +5,7 @@ interface ISearchFormViewProps {
   searchMovies: (e: React.FormEvent<EventTarget>) => void,
   updateSearchValue: (e:React.ChangeEvent<HTMLInputElement>) => void,
   updateSearchBy: (v:string) => void,
+  searchValue: string
 }
 
 const items = [
@@ -18,7 +19,7 @@ const items = [
   }
 ];
 
-const SearchFormView:React.FC<ISearchFormViewProps> = ({ searchMovies, updateSearchValue, updateSearchBy }) => {
+const SearchFormView:React.FC<ISearchFormViewProps> = ({ searchMovies, updateSearchValue, updateSearchBy, searchValue }) => {
   return(
     <div className="search-form_container">
     <form className="search-form" onSubmit={searchMovies}>
@@ -30,7 +31,9 @@ const SearchFormView:React.FC<ISearchFormViewProps> = ({ searchMovies, updateSea
           id="search-form_input" 
           type="text"
           placeholder="Enter the movie"
-          onChange={updateSearchValue}/>
+          onChange={updateSearchValue}
+          value={searchValue}
+          />
         </div>
         <div className="search-form_btn-container">
           <RadioToolbar name="search-form"
@@ -41,7 +44,6 @@ const SearchFormView:React.FC<ISearchFormViewProps> = ({ searchMovies, updateSea
 
           <input className="search-form_submit-btn" type="submit" value="Search" />
         </div>
-        
     </form>
   </div>
   )
